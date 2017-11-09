@@ -11,15 +11,15 @@ static void signal_handler(int signo){
     printf("Terminating because recieved a SIGINT\n");
     exit(0);
   }
-  if (signo == SIGUSR1){
+  if (Signo == SIGUSR1){
     printf("This is the ppid: %d", getppid());
-  }
 }
 
-int main(){
+int main()
+{
     while(1){
-        signal(SIGINT, signal_handler);
-        signal(SIGUSR1, signal_handler);
+        signal(SIGINT, sighandler);
+        signal(SIGUSR1, sighandler);
         printf("The id is %d\n", getpid());
         sleep(1);
     }
